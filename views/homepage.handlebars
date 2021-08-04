@@ -1,0 +1,19 @@
+<ul class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        <div class="card border-primary bg-secondary text-white mb-3">
+            <div class="card-header link-light">
+                <a href="/post/{{id}}">{{title}}</a>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{post}}</p>
+                    <footer class="blockquote-footer text-white">
+                        <span>Posted by {{user.username}} on {{format_date created_at}}</span>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
