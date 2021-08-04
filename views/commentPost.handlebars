@@ -1,0 +1,46 @@
+<div class="card border-primary bg-dark text-white mb-3">
+    <div class="card-header link-light">
+        <a href="/post/{{id}}">{{title}}</a>
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-1">
+            <p>{{post}}</p>
+            <footer class="blockquote-footer">
+                <span>Posted by {{user.username}} on {{format_date created_at}}</span>
+            </footer>
+        </blockquote>
+    </div>
+</div>
+
+{{#if logged_in}}
+<form class="comment-form">
+    <div class="form-outline mb-4">
+        <textarea class="form-control" name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-success">Add comment</button>
+    </div>
+</form>
+<br>
+{{/if}}
+
+{{#each this}}
+  <div class="card">
+    <div class="card-header">
+      <a href="/post/{{id}}">{{title}}</a>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{comment}}</p>
+        <footer class="blockquote-footer">
+          {{user.username}} on {{format_date created_at}}
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+{{/each}}
+
+{{#if logged_in}}
+<script src="/js/comment.js"></script>
+{{/if}}

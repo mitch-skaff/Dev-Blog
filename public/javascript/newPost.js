@@ -1,4 +1,4 @@
-const newPostHandler = async (event) => {
+const newPost = async (event) => {
     event.preventDefault();
   
     // Gather the data from the form elements on the page
@@ -24,5 +24,5 @@ const newPostHandler = async (event) => {
   
   document
     .querySelector('.newpost-form')
-    .addEventListener('click', newPostHandler);
+    .addEventListener('click', newPost);
 

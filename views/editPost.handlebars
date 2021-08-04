@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>Edit Post</h2>
+    <form class="edit-post-form">
+        <div class="form-outline mb-4">
+            <input name="post-title" id="post-title" type="text" value="{{post.title}}" class="form-control" />
+        </div>
+        <div class="form-outline mb-4">
+            <textarea class="form-control" name="post-text" id="post-text" rows="3">{{post.post}}</textarea>
+        </div>
+        <div style="float:right">
+            Posted by you on {{format_date post.created_at}}|<a href="/post/{{post.id}}">{{post.comments.length}}</a>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="button" id="delete-post" class="btn btn-success">Delete</button>
+    </form>
+</div>
+
+<div class="container">
+    <br><br>
+    <h2>Add Comment</h2>
+    <form class="comment-form">
+        <div class="form-outline mb-4">
+            <textarea class="form-control" name="comment-body" id="comment-body"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success">Post</button>
+        </div>
+    </form>
+</div>
+
+{{#each this}}
+<div class="card">
+    <div class="card-header">
+        <a href="/post/{{id}}">{{title}}</a>
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{comment}}</p>
+            <footer class="blockquote-footer">
+                {{user.username}} on {{format_date created_at}}
+            </footer>
+        </blockquote>
+    </div>
+</div>
+{{/each}}
+
+<script src="/js/editPost.js"></script>
+<script src="/js/delete.js"></script>
+<script src="/js/comment.js"></script>
