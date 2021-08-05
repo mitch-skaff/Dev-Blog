@@ -21,11 +21,11 @@
     </div>
 
     <hr>
-    {{#if posts.length}}
+    {{#if allPosts.length}}
     <section>
         <h2>Your Posts</h2>
         <ol>
-            {{#each posts as |post|}}
+            {{#each allPosts as |post|}}
             <li>
                 
                 <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a><br><br>
