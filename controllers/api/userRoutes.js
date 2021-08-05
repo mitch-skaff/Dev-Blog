@@ -31,12 +31,12 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'title', 'post', 'created_at']
       },
       {
-          model: Comment,
-          attributes: ['id', 'comment', 'post_id', 'user_id', 'created_at'],
-          include: {
-              model: Post,
-              attributes: ['title']
-          }
+        model: Comment,
+        attributes: ['id', 'comment', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title']
+        }
       }
     ]
   })
@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
     if (!userLogin) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password, please try again!' });
       return;
     }
 
@@ -69,14 +69,14 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password, please try again!' });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userLogin.id;
       req.session.logged_in = true;
-      
+
       res.json({ user: userLogin, message: 'You are now logged in!' });
     });
 
