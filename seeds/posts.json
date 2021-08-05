@@ -1,0 +1,27 @@
+[
+    {
+      "title": "ORM",
+      "post": "you should consider using one with your next JavaScript project",
+      "userID": 1
+    },
+    {
+      "title": "sequelize",
+      "post": "I love sequelize",
+      "user_id": 2
+    },
+    {
+      "title": "Path",
+      "post": "By requiring path into your main code, you can set a default folder that your application will use for all of its components",
+      "user_id": 3
+    },
+    {
+      "title": "Best framework?",
+      "post": "Bootsrap by a mile. Life saver",
+      "user_id": 4
+    },
+    {
+      "title": "Express",
+      "post": "Using Express.js, you can create a server in javascript.",
+      "user_id": 5
+    }
+  ]
